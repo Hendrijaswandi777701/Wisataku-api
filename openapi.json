@@ -18,13 +18,22 @@
     "/destinasi": {
       "get": {
         "operationId": "DestinasiController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "kategori",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Daftar destinasi berhasil diambil"
+            "description": ""
           }
         },
-        "summary": "Menampilkan daftar destinasi wisata",
+        "summary": "Menampilkan daftar destinasi, dapat difilter berdasarkan kategori",
         "tags": [
           "Destinasi"
         ]
@@ -44,13 +53,9 @@
         },
         "responses": {
           "201": {
-            "description": "Destinasi berhasil dibuat"
-          },
-          "400": {
-            "description": "Data tidak valid"
+            "description": ""
           }
         },
-        "summary": "Menambahkan destinasi baru (khusus admin)",
         "tags": [
           "Destinasi"
         ]
@@ -65,16 +70,15 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Detail destinasi berhasil diambil"
+            "description": ""
           }
         },
-        "summary": "Menampilkan detail satu destinasi",
         "tags": [
           "Destinasi"
         ]
@@ -87,7 +91,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -103,10 +107,9 @@
         },
         "responses": {
           "200": {
-            "description": "Destinasi berhasil diubah"
+            "description": ""
           }
         },
-        "summary": "Ubah sebagian data destinasi (khusus admin)",
         "tags": [
           "Destinasi"
         ]
@@ -119,16 +122,15 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Destinasi berhasil dihapus"
+            "description": ""
           }
         },
-        "summary": "Hapus destinasi (khusus admin)",
         "tags": [
           "Destinasi"
         ]
@@ -154,42 +156,11 @@
     "schemas": {
       "CreateDestinasiDto": {
         "type": "object",
-        "properties": {
-          "nama": {
-            "type": "string",
-            "example": "Pantai Kuta Mandalika"
-          },
-          "kategori": {
-            "type": "string",
-            "example": "Pantai"
-          },
-          "hargaTiket": {
-            "type": "number",
-            "example": 15000
-          }
-        },
-        "required": [
-          "nama",
-          "kategori",
-          "hargaTiket"
-        ]
+        "properties": {}
       },
       "UpdateDestinasiDto": {
         "type": "object",
-        "properties": {
-          "nama": {
-            "type": "string",
-            "example": "Pantai Kuta Mandalika"
-          },
-          "kategori": {
-            "type": "string",
-            "example": "Pantai"
-          },
-          "hargaTiket": {
-            "type": "number",
-            "example": 15000
-          }
-        }
+        "properties": {}
       }
     }
   }
