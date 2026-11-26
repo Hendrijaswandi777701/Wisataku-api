@@ -1,0 +1,18 @@
+
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist-microservices"
+  },
+  "include": [
+    "microservices/**/*.ts",
+    "src/prisma/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist-microservices",
+    "**/*.spec.ts"
+  ]
+}
